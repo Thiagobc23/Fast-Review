@@ -100,7 +100,7 @@ def transform(df):
 
     # DOWNLOAD BUTTONS
     st.text(" \n") #break line
-    col1, col2, col3 = st.beta_columns([.25, .25, 1])
+    col1, col2, col3 = st.beta_columns([.3, .3, 1])
     with col1:
         btn1 = st.button('Show Data')
     with col2:
