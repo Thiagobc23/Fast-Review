@@ -1,2 +1,3 @@
 streamlit-pandas-profiling
 pandas-profiling
+openpyxl
