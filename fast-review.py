@@ -130,7 +130,7 @@ def transform(df):
 
 def main():
     st.title('Fast Review')
-    st.write('A general purpose data exploration app to validate and perform small corrections')
+    st.write('A general-purpose data exploration app to validate and perform minor corrections in datasets.')
 
     file = st.file_uploader("Upload file", type=['csv', 'xlsx', 'pickle'])
 
