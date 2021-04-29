@@ -72,8 +72,8 @@ def transform(df):
     for i, c in enumerate(df.columns):
         if df[c].isnull().values.any():
             cols_null.append(c)
-            txt = f'{c} has {highlight(str(df[c].isnull().sum()))} null values'
-            expander_nulls.text(txt, unsafe_allow_html=True)
+            txt = f'{c} has {df[c].isnull().sum()} null values'
+            expander_nulls.text(txt)
             n_dict[i] = expander_nulls.selectbox('What to do with Nulls:'
                                                 ,[*null_dict]
                                                 ,index=0
