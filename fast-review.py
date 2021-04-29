@@ -64,8 +64,8 @@ def transform(df):
 
     # HANDLE NULLS
     expander_nulls = st.beta_expander('Missing values')
-    null_dict = {'-':None, 'Remove': 0, 'Note':1, 
-                 'Average': 2, 'Median': 3, 'Zero':4}
+    null_dict = {'-':None, 'Drop rows': 0, 'Replace with Note':1, 
+                 'Replace with Average': 2, 'Replace with Median': 3, 'Replace with 0 (Zero)':4}
     
     n_dict = {}
     cols_null = []
@@ -73,7 +73,7 @@ def transform(df):
         if df[c].isnull().values.any():
             cols_null.append(c)
             txt = '{} has {} null values'.format(c, df[c].isnull().sum())
-            expander_nulls.write(txt)
+            expander_nulls.text(txt)
             n_dict[i] = expander_nulls.selectbox('What to do with Nulls:'
                                                 ,[*null_dict]
                                                 ,index=0
