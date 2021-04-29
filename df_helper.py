@@ -31,7 +31,7 @@ def get_df(file):
         selected_ws = expander_ext.selectbox('Select Sheet', wb.sheetnames)
         # Start from row
         max_row = wb.worksheets[wb.sheetnames.index(selected_ws)].max_row
-        start_r = expander_ext.slider('Start from row', 1, max_row)
+        start_r = expander_ext.number_input('Start from row', 1, max_row)
         # data frame
         df = pd.read_excel(file, engine='openpyxl', sheet_name=selected_ws, header=start_r-1)
 
